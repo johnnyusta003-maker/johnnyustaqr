@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Menú digital de Johnny Usta Berlin Kebab – The Real One" />
+  <title>Johnny Usta · Berlin Kebab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFD801;
+      --text: #111111;
+      --accent: #FFD801;
+      --accent-dark: #e6c200;
+      --card: #ffffff;
+      --muted: #777777;
+      --border: #ebebeb;
+      --shadow: 0 2px 12px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 24px rgba(0,0,0,0.13);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 100px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────── */
+    .site-header {
+      background: var(--text);
+      color: #fff;
+      text-align: center;
+      padding: 36px 20px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    .header-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .header-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(32px, 9vw, 52px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-title span {
+      color: var(--accent);
+    }
+
+    .header-sub {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(16px, 4vw, 22px);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+    }
+
+    .header-subtitle {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 10px;
+    }
+
+    .header-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-top: 16px;
+      letter-spacing: 0.03em;
+    }
+
+    .header-notice::before {
+      content: '●';
+      font-size: 7px;
+      color: var(--accent);
+    }
+
+    /* ─── STICKY NAV ──────────────────────────────── */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .nav-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 4px;
+      padding: 10px 12px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-scroll::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: 1.5px solid transparent;
+      color: var(--muted);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      color: var(--text);
+      background: rgba(255,196,0,0.1);
+    }
+
+    .nav-btn.active {
+      background: var(--accent);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    /* ─── MAIN CONTENT ────────────────────────────── */
+    .main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ─── SECTION ─────────────────────────────────── */
+    .menu-section {
+      padding-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1.5px;
+      background: var(--border);
+    }
+
+    /* ─── CARDS ───────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 10px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: transparent;
+      transition: background 0.2s;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .card:hover::before { background: var(--accent); }
+    .card:active { transform: scale(0.985); }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .card-name {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .card-price {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--text);
+      white-space: nowrap;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .card-price-single {
+      font-size: 18px;
+    }
+
+    .card-sizes {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .size-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .size-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      background: var(--bg);
+      padding: 2px 7px;
+      border-radius: 100px;
+    }
+
+    .size-price {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+    }
+
+    .tag-topseller {
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    .tag-picante {
+      background: #ffe0d0;
+      color: #c0390d;
+    }
+
+    .tag-veggie {
+      background: #d8f5e2;
+      color: #1a7a3e;
+    }
+
+    .tag-kids {
+      background: #e0edff;
+      color: #1a4fa0;
+    }
+
+    .tag-gym {
+      background: #e8e0ff;
+      color: #4a1aa0;
+    }
+
+    .tag-alemana {
+      background: #fff0cc;
+      color: #7a5000;
+    }
+
+    .tag-sinalcohol {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .tag-vegano {
+      background: #b6f0d3;
+      color: #0e6633;
+    }
+
+    /* ─── EXTRAS / SALSAS SIMPLE ──────────────────── */
+    .simple-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 8px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .simple-card:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+
+    .simple-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .simple-price {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    /* Salsas grid */
+    .salsas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 8px;
+    }
+
+    .salsa-chip {
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      letter-spacing: 0.02em;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .salsa-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+
+    .salsa-chip.highlight {
+      background: var(--accent);
+      font-weight: 800;
+    }
+
+    /* Bebidas */
+    .bebidas-group-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 18px 0 10px;
+    }
+
+    /* Entrantes with sizes */
+    .entrante-sizes {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    /* ─── FIXED BOTTOM BUTTON ─────────────────────── */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      padding: 12px 16px 20px;
+      background: linear-gradient(to top, var(--bg) 70%, transparent);
+      z-index: 200;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pedir-btn {
+      background: var(--text);
+      color: #fff;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+      max-width: 360px;
+      width: 100%;
+    }
+
+    .pedir-btn:hover {
+      background: #222;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+    }
+
+    .pedir-btn:active { transform: scale(0.97); }
+
+    /* ─── MODAL ───────────────────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      z-index: 500;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--card);
+      border-radius: 24px 24px 0 0;
+      padding: 32px 28px 40px;
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      transform: translateY(30px);
+      transition: transform 0.3s cubic-bezier(.34,1.3,.7,1);
+    }
+
+    .modal-overlay.open .modal { transform: translateY(0); }
+
+    .modal-icon {
+      width: 52px; height: 52px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin: 0 auto 18px;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .modal-text {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-close {
+      background: var(--bg);
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      padding: 14px 40px;
+      border-radius: 100px;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+
+    .modal-close:hover { background: var(--border); }
+
+    /* ─── SCROLL ANIMATION ────────────────────────── */
+    .card, .simple-card, .salsa-chip {
+      animation: fadeUp 0.4s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stagger via JS – fallback */
+    .menu-section .card:nth-child(1) { animation-delay: 0.05s; }
+    .menu-section .card:nth-child(2) { animation-delay: 0.10s; }
+    .menu-section .card:nth-child(3) { animation-delay: 0.15s; }
+    .menu-section .card:nth-child(4) { animation-delay: 0.20s; }
+    .menu-section .card:nth-child(5) { animation-delay: 0.25s; }
+    .menu-section .card:nth-child(6) { animation-delay: 0.30s; }
+    .menu-section .card:nth-child(7) { animation-delay: 0.35s; }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (min-width: 600px) {
+      .main { padding: 0 24px; }
+      .card { padding: 22px 24px; }
+      .card-name { font-size: 15px; }
+      .section-title { font-size: 26px; }
+    }
+
+    @media (min-width: 900px) {
+      .site-header { padding: 48px 20px 36px; }
+      .main { padding: 0 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────── -->
+  <header class="site-header">
+    <img src="logo.png" alt="Johnny Usta Berlin Kebab" style="max-width:160px; width:60%; margin-bottom:18px; display:block; margin-left:auto; margin-right:auto;" />
+    <div class="header-badge">Menú digital</div>
+    <h1 class="header-title">
+      Johnny <span>Usta</span>
+    </h1>
+    <div class="header-sub">Berlin Kebab</div>
+    <div style="font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:6px;">The Real One</div>
+  </header>
+
+  <!-- ─── STICKY NAV ───────────────────────────────── -->
+  <nav class="nav-wrap" id="mainNav">
+    <div class="nav-scroll" id="navScroll">
+      <button class="nav-btn active" data-target="kids">Kids</button>
+      <button class="nav-btn" data-target="entrantes">Entrantes</button>
+      <button class="nav-btn" data-target="boxes">Boxes</button>
+      <button class="nav-btn" data-target="durum">Dürüm</button>
+      <button class="nav-btn" data-target="doner">Döner</button>
+      <button class="nav-btn" data-target="gymclub">Gym Club</button>
+      <button class="nav-btn" data-target="veggie">Veggie</button>
+      <button class="nav-btn" data-target="extras">Extras</button>
+      <button class="nav-btn" data-target="salsas">Salsas</button>
+      <button class="nav-btn" data-target="cervezas">Cervezas</button>
+      <button class="nav-btn" data-target="refrescos">Refrescos</button>
+    </div>
+  </nav>
+
+  <!-- ─── MAIN ─────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- KIDS -->
+    <section class="menu-section" id="kids">
+      <div class="section-header">
+        <h2 class="section-title">Kids</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Kids Box</div>
+          <div class="card-price card-price-single">7,00 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, patatas y una salsa</div>
+        <div class="card-tags">
+          <span class="tag tag-kids">👶 Kids</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Crispy Nuggets Box</div>
+          <div class="card-price card-price-single">7,00 €</div>
+        </div>
+        <div class="card-desc">Crispy nuggets, patatas y una salsa</div>
+        <div class="card-tags">
+          <span class="tag tag-kids">👶 Kids</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Dürüm Pequeño + Patatas</div>
+          <div class="card-price card-price-single">7,00 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla y una salsa</div>
+        <div class="card-tags">
+          <span class="tag tag-kids">👶 Kids</span>
+        </div>
+      </div>
+
+      <div class="simple-card">
+        <span class="simple-name">Refresco incluido</span>
+        <span class="simple-price">+1,50 €</span>
+      </div>
+    </section>
+
+    <!-- ENTRANTES -->
+    <section class="menu-section" id="entrantes">
+      <div class="section-header">
+        <h2 class="section-title">Entrantes</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Crispy Chicken Nuggets</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">3 uds</span><span class="size-price">5,90 €</span></div>
+              <div class="size-row"><span class="size-label">6 uds</span><span class="size-price">10,90 €</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Falafel con Salsa Tahini Hummus</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">4 uds</span><span class="size-price">5,90 €</span></div>
+              <div class="size-row"><span class="size-label">8 uds</span><span class="size-price">9,90 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-vegano">🌿 Vegano</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Patatas Fritas con Salsa Johnny Special</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">Normal</span><span class="size-price">4,50 €</span></div>
+              <div class="size-row"><span class="size-label">Grande</span><span class="size-price">7,00 €</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOXES -->
+    <section class="menu-section" id="boxes">
+      <div class="section-header">
+        <h2 class="section-title">Boxes</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">90's Classic Box</div>
+          <div class="card-price card-price-single">9,00 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, salsa hierbas y salsa ajo</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Johnny's Original Box</div>
+          <div class="card-price card-price-single">9,50 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Hot Box</div>
+          <div class="card-price card-price-single">9,90 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla, col, jalapeños, salsa ajo, salsa hierbas, salsa roja, salsa picante y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-picante">🌶 Picante</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Berlin Box</div>
+          <div class="card-price card-price-single">10,90 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Zidane Box</div>
+          <div class="card-price card-price-single">9,90 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, patatas, mozzarella, cheddar y salsa Johnny Special</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Crispy Box</div>
+          <div class="card-price card-price-single">9,90 €</div>
+        </div>
+        <div class="card-desc">Crispy chicken, patatas, mozzarella, cheddar, mayonesa y salsa Johnny Special</div>
+      </div>
+    </section>
+
+    <!-- DÜRÜM -->
+    <section class="menu-section" id="durum">
+      <div class="section-header">
+        <h2 class="section-title">Dürüm</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">90's Classic</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">5,90 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">7,90 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">9,90 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, salsa ajo y salsa hierbas</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Johnny's Original</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,50 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,50 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,50 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Picante</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,90 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,90 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, jalapeños, salsa ajo, salsa hierbas, salsa picante y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-picante">🌶 Picante</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Berlin</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,90 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,90 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,90 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Solo Carne</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Zidane</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, patatas, mozzarella, cheddar y salsa Johnny Special</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Crispy</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Crispy chicken, lechuga, patatas, mozzarella, cheddar, mayonesa y salsa Johnny Special</div>
+      </div>
+    </section>
+
+    <!-- DÖNER -->
+    <section class="menu-section" id="doner">
+      <div class="section-header">
+        <h2 class="section-title">Döner</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">90's Classic</div>
+          <div class="card-price card-price-single">7,90 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, salsa ajo y salsa hierbas</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Johnny's Original</div>
+          <div class="card-price card-price-single">8,50 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Picante</div>
+          <div class="card-price card-price-single">8,90 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, jalapeño, salsa ajo, salsa hierbas, salsa picante y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-picante">🌶 Picante</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Berlin</div>
+          <div class="card-price card-price-single">9,90 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Solo Carne</div>
+          <div class="card-price card-price-single">9,50 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+      </div>
+    </section>
+
+    <!-- GYM CLUB -->
+    <section class="menu-section" id="gymclub">
+      <div class="section-header">
+        <h2 class="section-title">Gym Club</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Fit Box</div>
+          <div class="card-price card-price-single">9,00 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla, col, pepino, dressing de granada, aceite de oliva, vinagre y salsa hierbas</div>
+        <div class="card-tags">
+          <span class="tag tag-gym">💪 Gym</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Gym Classic Box</div>
+          <div class="card-price card-price-single">9,50 €</div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, arroz, lechuga, tomate, cebolla, col, pepino, dressing de granada, aceite de oliva, vinagre y salsa hierbas</div>
+        <div class="card-tags">
+          <span class="tag tag-gym">💪 Gym</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VEGGIE / VEGANO -->
+    <section class="menu-section" id="veggie">
+      <div class="section-header">
+        <h2 class="section-title">Veggie / Vegano</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Vegetal Döner</div>
+          <div class="card-price card-price-single">5,90 €</div>
+        </div>
+        <div class="card-desc">Lechuga, cebolla, tomate, pepino, col y salsas</div>
+        <div class="card-tags">
+          <span class="tag tag-veggie">🥗 Veggie</span>
+          <span class="tag tag-vegano">🌿 Vegano</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Vegetal Dürüm</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">4,50 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">6,50 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">8,50 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Lechuga, cebolla, tomate, pepino, col y salsas</div>
+        <div class="card-tags">
+          <span class="tag tag-veggie">🥗 Veggie</span>
+          <span class="tag tag-vegano">🌿 Vegano</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Falafel Döner</div>
+          <div class="card-price card-price-single">8,50 €</div>
+        </div>
+        <div class="card-desc">Falafel casero crujiente, lechuga, cebolla, tomate, pepino, col y salsas</div>
+        <div class="card-tags">
+          <span class="tag tag-veggie">🥗 Veggie</span>
+          <span class="tag tag-vegano">🌿 Vegano</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Falafel Dürüm</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,50 €</span></div>
+              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,50 €</span></div>
+              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,50 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Falafel casero crujiente, lechuga, cebolla, tomate, pepino, col y salsas</div>
+        <div class="card-tags">
+          <span class="tag tag-veggie">🥗 Veggie</span>
+          <span class="tag tag-vegano">🌿 Vegano</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Falafel Box</div>
+          <div class="card-price card-price-single">9,50 €</div>
+        </div>
+        <div class="card-desc">Falafel, patatas, lechuga, cebolla, tomate, pepino, col y salsas</div>
+        <div class="card-tags">
+          <span class="tag tag-veggie">🥗 Veggie</span>
+          <span class="tag tag-vegano">🌿 Vegano</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRAS -->
+    <section class="menu-section" id="extras">
+      <div class="section-header">
+        <h2 class="section-title">Extras</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="simple-card"><span class="simple-name">Extra pollo</span><span class="simple-price">2,50 €</span></div>
+      <div class="simple-card"><span class="simple-name">Verduras asadas</span><span class="simple-price">1,00 €</span></div>
+      <div class="simple-card"><span class="simple-name">Salsa extra / aparte</span><span class="simple-price">0,70 €</span></div>
+      <div class="simple-card"><span class="simple-name">Queso de oveja</span><span class="simple-price">1,00 €</span></div>
+      <div class="simple-card"><span class="simple-name">Jalapeños</span><span class="simple-price">0,70 €</span></div>
+      <div class="simple-card"><span class="simple-name">Patatas dentro del kebab</span><span class="simple-price">0,50 €</span></div>
+      <div class="simple-card"><span class="simple-name">Pan</span><span class="simple-price">1,00 €</span></div>
+    </section>
+
+    <!-- SALSAS -->
+    <section class="menu-section" id="salsas">
+      <div class="section-header">
+        <h2 class="section-title">Salsas</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="salsas-grid">
+        <div class="salsa-chip">Johnny Special</div>
+        <div class="salsa-chip">Ajo</div>
+        <div class="salsa-chip">Hierbas</div>
+        <div class="salsa-chip">Salsa Roja</div>
+        <div class="salsa-chip">Picante</div>
+        <div class="salsa-chip">Tahini Hummus</div>
+        <div class="salsa-chip">Ketchup</div>
+        <div class="salsa-chip">Mayonesa</div>
+        <div class="salsa-chip">BBQ</div>
+      </div>
+    </section>
+
+    <!-- CERVEZAS -->
+    <section class="menu-section" id="cervezas">
+      <div class="section-header">
+        <h2 class="section-title">Cervezas</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="bebidas-group-title">Cerveza Alemana</div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Augustiner</div>
+            <div class="card-desc" style="margin-top:3px;">0,5 l</div>
+          </div>
+          <div class="card-price card-price-single">4,50 €</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-alemana">🇩🇪 Alemana</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Dinkelacker</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">3,00 €</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-alemana">🇩🇪 Alemana</span>
+        </div>
+      </div>
+
+      <div class="bebidas-group-title">Turia</div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Turia Tostada</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">3,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Turia 0,0 Tostada</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">3,00 €</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-sinalcohol">Sin alcohol</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Turia Rubia</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">3,00 €</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFRESCOS -->
+    <section class="menu-section" id="refrescos">
+      <div class="section-header">
+        <h2 class="section-title">Refrescos</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Coca-Cola</div>
+            <div class="card-desc" style="margin-top:3px;">0,237 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Coca-Cola Zero</div>
+            <div class="card-desc" style="margin-top:3px;">0,237 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Fanta Naranja</div>
+            <div class="card-desc" style="margin-top:3px;">0,237 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Fanta Limón</div>
+            <div class="card-desc" style="margin-top:3px;">0,237 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Sprite</div>
+            <div class="card-desc" style="margin-top:3px;">0,237 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Capri Sonne</div>
+            <div class="card-desc" style="margin-top:3px;">0,2 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Ayran</div>
+            <div class="card-desc" style="margin-top:3px;">0,25 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Agua</div>
+            <div class="card-desc" style="margin-top:3px;">0,5 l</div>
+          </div>
+          <div class="card-price card-price-single">1,50 €</div>
+        </div>
+      </div>
+
+      <div class="bebidas-group-title">Aquarius</div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Aquarius Limón</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,50 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Aquarius Naranja</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,50 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Aquarius Melocotón</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,50 €</div>
+        </div>
+      </div>
+
+      <div class="bebidas-group-title">Fuze Tea</div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Fuze Tea Limón</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,50 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Fuze Tea Maracuyá</div>
+            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,50 €</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── BOTTOM BAR ────────────────────────────────── -->
+  <div class="bottom-bar">
+    <button class="pedir-btn" id="pedirBtn">Pedir en caja</button>
+  </div>
+
+  <!-- ─── MODAL ─────────────────────────────────────── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-icon">🏪</div>
+      <div class="modal-title" id="modalTitle">Pedir en caja</div>
+      <div class="modal-text">
+        Haz tu pedido directamente en caja.<br>
+        <strong>¡Gracias por tu visita!</strong><br><br>
+        Aceptamos efectivo y <strong>Bizum</strong>.
+      </div>
+      <button class="modal-close" id="modalClose">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    // ─── NAV: scroll-spy + click-to-scroll ───────────────
+    const navBtns = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('.menu-section');
+    const navScroll = document.getElementById('navScroll');
+    const navHeight = document.getElementById('mainNav').offsetHeight;
+
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.target;
+        const el = document.getElementById(id);
+        if (!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    function setActive(id) {
+      navBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+      const activeBtn = document.querySelector(`.nav-btn[data-target="${id}"]`);
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, {
+      rootMargin: `-${navHeight + 16}px 0px -55% 0px`,
+      threshold: 0
+    });
+
+    sections.forEach(s => observer.observe(s));
+
+    // ─── MODAL ────────────────────────────────────────────
+    const overlay = document.getElementById('modalOverlay');
+    document.getElementById('pedirBtn').addEventListener('click', () => {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeModal() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ─── STAGGER ANIMATION ON SCROLL ─────────────────────
+    const cardObserver = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.card, .simple-card, .salsa-chip').forEach((el, i) => {
+      el.style.animationDelay = `${(i % 7) * 0.06}s`;
+      el.style.animationPlayState = 'paused';
+      cardObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
