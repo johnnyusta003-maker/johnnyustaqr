@@ -572,8 +572,8 @@
   <!-- ─── STICKY NAV ───────────────────────────────── -->
   <nav class="nav-wrap" id="mainNav">
     <div class="nav-scroll" id="navScroll">
-      <button class="nav-btn active" data-target="kids">Kids</button>
-      <button class="nav-btn" data-target="entrantes">Entrantes</button>
+      <button class="nav-btn active" data-target="entrantes">Entrantes</button>
+      <button class="nav-btn" data-target="kids">Kids</button>
       <button class="nav-btn" data-target="boxes">Boxes</button>
       <button class="nav-btn" data-target="durum">Dürüm</button>
       <button class="nav-btn" data-target="doner">Döner</button>
@@ -588,6 +588,74 @@
 
   <!-- ─── MAIN ─────────────────────────────────────── -->
   <main class="main">
+
+    <!-- ENTRANTES -->
+    <section class="menu-section" id="entrantes">
+      <div class="section-header">
+        <h2 class="section-title">Entrantes / Para Compartir</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Nachos</div>
+          <div class="card-price card-price-single">6,90 €</div>
+        </div>
+        <div class="card-desc">Con salsa queso, salsa roja y guacamole</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Nachos Spicy</div>
+          <div class="card-price card-price-single">7,50 €</div>
+        </div>
+        <div class="card-desc">Con salsa queso, salsa picante, guacamole y jalapeños</div>
+        <div class="card-tags">
+          <span class="tag tag-picante">🌶 Picante</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Patatas Fritas</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">Normal</span><span class="size-price">4,50 €</span></div>
+              <div class="size-row"><span class="size-label">Grande</span><span class="size-price">7,00 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Con salsa Johnny Special</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Cheesy Fries</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">Normal</span><span class="size-price">5,50 €</span></div>
+              <div class="size-row"><span class="size-label">Grande</span><span class="size-price">8,00 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-desc">Patatas fritas con queso y jalapeños</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Falafel con Salsa Tahini Hummus</div>
+          <div class="card-price">
+            <div class="card-sizes">
+              <div class="size-row"><span class="size-label">4 uds</span><span class="size-price">5,90 €</span></div>
+              <div class="size-row"><span class="size-label">8 uds</span><span class="size-price">9,90 €</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-vegano">🌿 Vegano</span>
+        </div>
+      </div>
+    </section>
 
     <!-- KIDS -->
     <section class="menu-section" id="kids">
@@ -632,53 +700,6 @@
       <div class="simple-card">
         <span class="simple-name">Refresco incluido</span>
         <span class="simple-price">+1,50 €</span>
-      </div>
-    </section>
-
-    <!-- ENTRANTES -->
-    <section class="menu-section" id="entrantes">
-      <div class="section-header">
-        <h2 class="section-title">Entrantes</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-name">Crispy Chicken Nuggets</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">3 uds</span><span class="size-price">5,90 €</span></div>
-              <div class="size-row"><span class="size-label">6 uds</span><span class="size-price">10,90 €</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-name">Falafel con Salsa Tahini Hummus</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">4 uds</span><span class="size-price">5,90 €</span></div>
-              <div class="size-row"><span class="size-label">8 uds</span><span class="size-price">9,90 €</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="card-tags">
-          <span class="tag tag-vegano">🌿 Vegano</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-name">Patatas Fritas con Salsa Johnny Special</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">Normal</span><span class="size-price">4,50 €</span></div>
-              <div class="size-row"><span class="size-label">Grande</span><span class="size-price">7,00 €</span></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1291,8 +1312,7 @@
       <div class="modal-title" id="modalTitle">Pedir en caja</div>
       <div class="modal-text">
         Haz tu pedido directamente en caja.<br>
-        <strong>¡Gracias por tu visita!</strong><br><br>
-        Aceptamos efectivo y <strong>Bizum</strong>.
+        <strong>¡Gracias por tu visita!</strong>
       </div>
       <button class="modal-close" id="modalClose">Cerrar</button>
     </div>
