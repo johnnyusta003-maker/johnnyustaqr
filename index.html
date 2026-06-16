@@ -523,6 +523,74 @@
 
     .modal-close:hover { background: var(--border); }
 
+    /* ─── MENU HINT ───────────────────────────────── */
+    .menu-hint {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--text);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .menu-hint span {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    /* ─── IMAGE STRIP ─────────────────────────────── */
+    .img-strip-wrap {
+      background: #000;
+      overflow: hidden;
+      padding: 12px 0;
+    }
+
+    .img-strip {
+      display: flex;
+      gap: 8px;
+      padding: 0 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .img-strip::-webkit-scrollbar { display: none; }
+
+    .img-tile {
+      flex-shrink: 0;
+      width: 110px;
+      height: 110px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #222;
+    }
+
+    .img-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .img-tile img:hover { transform: scale(1.06); }
+
+    /* Placeholder wenn Bild fehlt */
+    .img-tile img[src=""] ,
+    .img-tile img:not([src]) {
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      .img-tile { width: 140px; height: 140px; }
+    }
+
     /* ─── SCROLL ANIMATION ────────────────────────── */
     .card, .simple-card, .salsa-chip {
       animation: fadeUp 0.4s ease both;
@@ -586,6 +654,18 @@
     </div>
   </nav>
 
+  <!-- ─── IMAGE STRIP ──────────────────────────────── -->
+  <div class="img-strip-wrap">
+    <div class="img-strip" id="imgStrip">
+      <div class="img-tile"><img src="img1.jpg" alt="Kebab 1" /></div>
+      <div class="img-tile"><img src="img2.jpg" alt="Kebab 2" /></div>
+      <div class="img-tile"><img src="img3.jpg" alt="Kebab 3" /></div>
+      <div class="img-tile"><img src="img4.jpg" alt="Kebab 4" /></div>
+      <div class="img-tile"><img src="img5.jpg" alt="Kebab 5" /></div>
+      <div class="img-tile"><img src="img6.jpg" alt="Kebab 6" /></div>
+    </div>
+  </div>
+
   <!-- ─── MAIN ─────────────────────────────────────── -->
   <main class="main">
 
@@ -599,15 +679,15 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Nachos</div>
-          <div class="card-price card-price-single">6,90 €</div>
+          <div class="card-price card-price-single">7,50 €</div>
         </div>
-        <div class="card-desc">Con salsa queso, salsa roja y guacamole</div>
+        <div class="card-desc">Con salsa queso y guacamole</div>
       </div>
 
       <div class="card">
         <div class="card-top">
           <div class="card-name">Nachos Spicy</div>
-          <div class="card-price card-price-single">7,50 €</div>
+          <div class="card-price card-price-single">7,90 €</div>
         </div>
         <div class="card-desc">Con salsa queso, salsa picante, guacamole y jalapeños</div>
         <div class="card-tags">
@@ -660,8 +740,12 @@
     <!-- KIDS -->
     <section class="menu-section" id="kids">
       <div class="section-header">
-        <h2 class="section-title">Kids</h2>
+        <h2 class="section-title">Kids <span style="font-size:0.55em; font-weight:400; letter-spacing:0.05em; opacity:0.6;">(hasta 12 años)</span></h2>
         <div class="section-line"></div>
+      </div>
+
+      <div class="menu-hint">
+        <strong>+ Refresco</strong> <span>+1,50 €</span>
       </div>
 
       <div class="card">
@@ -697,10 +781,6 @@
         </div>
       </div>
 
-      <div class="simple-card">
-        <span class="simple-name">Refresco incluido</span>
-        <span class="simple-price">+1,50 €</span>
-      </div>
     </section>
 
     <!-- BOXES -->
@@ -773,6 +853,10 @@
       <div class="section-header">
         <h2 class="section-title">Dürüm</h2>
         <div class="section-line"></div>
+      </div>
+
+      <div class="menu-hint">
+        <strong>Menú</strong> + Refresco + Patatas <span>+4,90 €</span>
       </div>
 
       <div class="card">
@@ -888,6 +972,10 @@
       <div class="section-header">
         <h2 class="section-title">Döner</h2>
         <div class="section-line"></div>
+      </div>
+
+      <div class="menu-hint">
+        <strong>Menú</strong> + Refresco + Patatas <span>+4,90 €</span>
       </div>
 
       <div class="card">
