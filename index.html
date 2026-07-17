@@ -372,6 +372,147 @@
       color: var(--muted);
     }
 
+    /* ─── PROMO BANNER ───────────────────────────────── */
+    .promo-banner {
+      background: #111;
+      padding: 28px 20px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .promo-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .promo-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #111;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+    .promo-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .promo-headline span {
+      color: var(--accent);
+    }
+    .promo-subline {
+      font-size: 0.82rem;
+      color: #aaa;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .promo-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .promo-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: #ddd;
+      line-height: 1.4;
+    }
+    .promo-check {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      background: var(--accent);
+      color: #111;
+      font-size: 0.65rem;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .promo-ig-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: linear-gradient(100deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+      color: #fff;
+      text-decoration: none;
+      padding: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(180,40,120,0.45);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .promo-ig-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 3px 12px rgba(180,40,120,0.3);
+    }
+    .promo-ig-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+    }
+    .promo-ig-icon-wrap {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .promo-ig-icon {
+      width: 22px; height: 22px;
+      fill: #fff;
+    }
+    .promo-ig-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .promo-ig-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .promo-ig-handle {
+      font-size: 0.75rem;
+      opacity: 0.85;
+      letter-spacing: 0.02em;
+    }
+    .promo-ig-arrow {
+      padding: 14px 18px;
+      font-size: 1.3rem;
+      opacity: 0.7;
+    }
+    .promo-note {
+      font-size: 0.78rem;
+      color: #fff;
+      text-align: center;
+      margin-top: 12px;
+    }
+
     /* Drink group label */
     .drink-group-label {
       font-family: 'Oswald', sans-serif;
@@ -712,6 +853,38 @@
     </div>
   </div>
 
+  <!-- ─── PROMO BANNER ─────────────────────────────── -->
+  <div class="promo-banner">
+    <div class="promo-inner">
+      <div class="promo-eyebrow">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#111"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Oferta exclusiva
+      </div>
+      <div class="promo-headline">20% de descuento<br><span>en toda la carta</span></div>
+      <div class="promo-subline">Solo por seguirnos en Instagram y subir una historia</div>
+      <ul class="promo-steps">
+        <li><span class="promo-check">✔</span><span>Síguenos en Instagram</span></li>
+        <li><span class="promo-check">✔</span><span>Sube una historia etiquetándonos.</span></li>
+        <li><span class="promo-check">✔</span><span>Tu perfil debe ser público para que podamos compartir tu historia.</span></li>
+      </ul>
+      <a class="promo-ig-btn" href="https://www.instagram.com/johnnyustatorrent" target="_blank" rel="noopener noreferrer">
+        <div class="promo-ig-left">
+          <div class="promo-ig-icon-wrap">
+            <svg class="promo-ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="promo-ig-texts">
+            <div class="promo-ig-label">Seguir en Instagram</div>
+            <div class="promo-ig-handle">@johnnyustatorrent</div>
+          </div>
+        </div>
+        <div class="promo-ig-arrow">›</div>
+      </a>
+      <div class="promo-note">Solo válido para perfiles públicos.</div>
+    </div>
+  </div>
+
   <!-- ─── MAIN ─────────────────────────────────────── -->
   <main class="main">
 
@@ -720,6 +893,14 @@
       <div class="section-header">
         <h2 class="section-title">Entrantes / Para Compartir</h2>
         <div class="section-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Nachos</div>
+          <div class="card-price card-price-single">7,50 €</div>
+        </div>
+        <div class="card-desc">Con salsa queso y guacamole</div>
       </div>
 
       <div class="card">
