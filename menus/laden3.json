@@ -1,0 +1,149 @@
+{
+  "store": {
+    "id": "laden3",
+    "name": "Johnny Usta Laden 3"
+  },
+  "sections": [
+    {
+      "id": "entrantes",
+      "navLabel": "Entrantes",
+      "title": "Entrantes / Para Compartir",
+      "image": "entrantes.jpg",
+      "items": [
+        { "type": "card", "name": "Nachos", "desc": "Con salsa queso y guacamole", "price": "7,50 €" },
+        { "type": "card", "name": "Nachos Gratinados", "desc": "Con queso, carne picada, guacamole y sour cream", "price": "10,90 €" },
+        { "type": "card", "name": "Nachos Gratinados Spicy", "desc": "Con queso, carne picada, guacamole, sour cream y jalapeños", "price": "11,50 €", "tags": ["picante"] },
+        { "type": "card", "name": "Patatas Fritas", "desc": "Con salsa Johnny Special", "sizes": [{ "label": "Normal", "price": "4,50 €" }, { "label": "Grande", "price": "7,00 €" }] },
+        { "type": "card", "name": "Amsterdam Fries", "desc": "Con mayonesa de trufa y parmesano", "sizes": [{ "label": "Normal", "price": "5,50 €" }, { "label": "Grande", "price": "8,00 €" }] },
+        { "type": "card", "name": "Juicy Fries", "desc": "Patatas fritas con salsa ajo, salsa hierbas, salsa roja y salsa especial", "sizes": [{ "label": "Normal", "price": "5,00 €" }, { "label": "Grande", "price": "7,50 €" }] },
+        { "type": "card", "name": "Chili Cheese Fries", "desc": "Patatas fritas con queso y jalapeños", "sizes": [{ "label": "Normal", "price": "5,50 €" }, { "label": "Grande", "price": "8,00 €" }] },
+        { "type": "card", "name": "Falafel con Salsa Tahini Hummus", "sizes": [{ "label": "4 uds", "price": "5,90 €" }, { "label": "8 uds", "price": "9,90 €" }], "tags": ["vegano"] }
+      ]
+    },
+    {
+      "id": "kids",
+      "navLabel": "Kids",
+      "title": "Kids",
+      "titleSuffix": "(hasta 12 años)",
+      "image": "kids.jpg",
+      "items": [
+        { "type": "card", "name": "Kids Box", "desc": "Pollo a la parrilla, patatas y una salsa", "price": "7,00 €", "tags": ["kids"] },
+        { "type": "card", "name": "Crispy Nuggets Box", "desc": "Crispy nuggets, patatas y una salsa", "price": "7,00 €", "tags": ["kids"] },
+        { "type": "card", "name": "Dürüm Pequeño + Patatas", "desc": "Pollo a la parrilla, lechuga, tomate, cebolla y una salsa", "price": "7,00 €", "tags": ["kids"] }
+      ]
+    },
+    {
+      "id": "boxes",
+      "navLabel": "Box / Bowl",
+      "title": "Box / Bowl",
+      "image": "box.jpg",
+      "items": [
+        { "type": "card", "name": "90's Classic Box", "desc": "Pollo a la parrilla, patatas fritas, salsa hierbas y salsa ajo", "price": "9,00 €" },
+        { "type": "card", "name": "Juicy Box", "desc": "Pollo a la parrilla, patatas fritas, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special", "price": "9,50 €" },
+        { "type": "card", "name": "Johnny's Original Box", "desc": "Pollo a la parrilla, patatas fritas, lechuga, tomate, cebolla, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special", "price": "9,90 €", "tags": ["topseller"] },
+        { "type": "card", "name": "Hot Box", "desc": "Pollo a la parrilla, patatas fritas, lechuga, tomate, cebolla, col, jalapeños, salsa ajo, salsa hierbas, salsa roja, salsa picante y salsa Johnny Special", "price": "10,50 €", "tags": ["picante"] },
+        { "type": "card", "name": "Berlin Box", "desc": "Pollo a la parrilla, patatas fritas, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special", "price": "10,90 €", "tags": ["topseller"] },
+        { "type": "card", "name": "Zidane Box", "desc": "Pollo a la parrilla, patatas fritas, mozzarella, cheddar y salsa Johnny Special", "price": "9,90 €" },
+        { "type": "card", "name": "Crispy Chicken Box", "desc": "Crispy chicken, patatas fritas, mozzarella, cheddar, mayonesa y salsa Johnny Special", "price": "9,90 €" },
+        { "type": "card", "name": "Fit Box", "desc": "Pollo a la parrilla, lechuga, tomate, cebolla, col, pepino, dressing de granada, aceite de oliva, vinagre y salsa hierbas", "price": "9,00 €", "tags": ["gym"] }
+      ]
+    },
+    {
+      "id": "durum",
+      "navLabel": "Dürüm",
+      "title": "Dürüm",
+      "image": "durum.jpg",
+      "items": [
+        { "type": "card", "name": "90's Classic", "desc": "Pollo a la parrilla, lechuga, cebolla, tomate, salsa ajo y salsa hierbas", "sizes": [{ "label": "M", "price": "5,90 €" }, { "label": "L", "price": "7,90 €" }, { "label": "XL", "price": "9,90 €" }] },
+        { "type": "card", "name": "Johnny's Original", "desc": "Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special", "sizes": [{ "label": "M", "price": "6,50 €" }, { "label": "L", "price": "8,50 €" }, { "label": "XL", "price": "10,50 €" }], "tags": ["topseller"] },
+        { "type": "card", "name": "The Boss", "desc": "Pollo a la parrilla, lechuga, cebolla, verduras asadas, salsa ajo, salsa hierbas y salsa roja", "sizes": [{ "label": "M", "price": "6,90 €" }, { "label": "L", "price": "8,90 €" }, { "label": "XL", "price": "10,90 €" }] },
+        { "type": "card", "name": "Picante", "desc": "Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, jalapeños, salsa ajo, salsa hierbas, salsa picante y salsa Johnny Special", "sizes": [{ "label": "M", "price": "6,90 €" }, { "label": "L", "price": "8,90 €" }, { "label": "XL", "price": "10,90 €" }], "tags": ["picante"] },
+        { "type": "card", "name": "Berlin", "desc": "Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special", "sizes": [{ "label": "M", "price": "7,90 €" }, { "label": "L", "price": "9,90 €" }, { "label": "XL", "price": "11,90 €" }], "tags": ["topseller"] },
+        { "type": "card", "name": "Solo Carne", "desc": "Pollo a la parrilla, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special", "sizes": [{ "label": "M", "price": "7,50 €" }, { "label": "L", "price": "9,50 €" }, { "label": "XL", "price": "11,50 €" }] }
+      ]
+    },
+    {
+      "id": "tacos",
+      "navLabel": "Tacos",
+      "title": "Tacos",
+      "image": "tacos.jpg",
+      "items": [
+        { "type": "card", "name": "Zidane", "desc": "Pollo a la parrilla, patatas fritas, mozzarella, cheddar y salsa Johnny Special", "sizes": [{ "label": "M", "price": "7,50 €" }, { "label": "L", "price": "9,50 €" }, { "label": "XL", "price": "11,50 €" }] },
+        { "type": "card", "name": "Crispy Chicken", "desc": "Crispy chicken, lechuga, patatas, mozzarella, cheddar, mayonesa y salsa Johnny Special", "sizes": [{ "label": "M", "price": "7,50 €" }, { "label": "L", "price": "9,50 €" }, { "label": "XL", "price": "11,50 €" }] }
+      ]
+    },
+    {
+      "id": "veggie",
+      "navLabel": "Veggie",
+      "title": "Veggie / Vegano",
+      "image": "veggie.jpg",
+      "items": [
+        { "type": "card", "name": "Vegetal Dürüm", "desc": "Lechuga, cebolla, tomate, pepino, col y salsas", "sizes": [{ "label": "M", "price": "4,50 €" }, { "label": "L", "price": "6,50 €" }, { "label": "XL", "price": "8,50 €" }], "tags": ["veggie", "vegano"] },
+        { "type": "card", "name": "Falafel Dürüm", "desc": "Falafel casero crujiente, lechuga, cebolla, tomate, pepino, col y salsas", "sizes": [{ "label": "M", "price": "6,50 €" }, { "label": "L", "price": "8,50 €" }, { "label": "XL", "price": "10,50 €" }], "tags": ["veggie", "vegano"] },
+        { "type": "card", "name": "Falafel Box", "desc": "Falafel, patatas, lechuga, cebolla, tomate, pepino, col y salsas", "price": "9,50 €", "tags": ["veggie", "vegano"] }
+      ]
+    },
+    {
+      "id": "extras",
+      "navLabel": "Extras",
+      "title": "Extras",
+      "items": [
+        { "type": "simple", "name": "Extra pollo", "price": "2,50 €" },
+        { "type": "simple", "name": "Verduras asadas", "price": "1,00 €" },
+        { "type": "simple", "name": "Salsa extra / aparte", "price": "0,70 €" },
+        { "type": "simple", "name": "Queso de oveja", "price": "1,00 €" },
+        { "type": "simple", "name": "Jalapeños", "price": "0,70 €" },
+        { "type": "simple", "name": "Patatas dentro del kebab", "price": "0,50 €" }
+      ]
+    },
+    {
+      "id": "salsas",
+      "navLabel": "Salsas",
+      "title": "Salsas",
+      "items": [
+        { "type": "salsas", "list": ["Johnny Special", "Ajo", "Hierbas", "Salsa Roja", "Picante", "Tahini Hummus", "Ketchup", "Mayonesa", "BBQ"] }
+      ]
+    },
+    {
+      "id": "cervezas",
+      "navLabel": "Cervezas",
+      "title": "Cervezas",
+      "items": [
+        { "type": "groupTitle", "text": "Cerveza Alemana" },
+        { "type": "card", "name": "Augustiner", "volume": "0,5 l", "price": "4,90 €", "tags": ["alemana"] },
+        { "type": "card", "name": "Dinkelacker", "volume": "0,33 l", "price": "3,80 €", "tags": ["alemana"] },
+        { "type": "card", "name": "Corona", "volume": "0,33 l", "price": "3,80 €" },
+        { "type": "groupTitle", "text": "Turia" },
+        { "type": "card", "name": "Turia Tostada", "volume": "0,33 l", "price": "3,00 €" },
+        { "type": "card", "name": "Turia 0,0 Tostada", "volume": "0,33 l", "price": "3,00 €", "tags": ["sinalcohol"] },
+        { "type": "card", "name": "Turia Rubia", "volume": "0,33 l", "price": "3,00 €" },
+        { "type": "card", "name": "Damm Lemon Radler", "volume": "0,33 l", "price": "3,00 €" },
+        { "type": "subsection", "title": "Especial Verano" },
+        { "type": "card", "name": "Tinto de Verano", "price": "3,50 €" }
+      ]
+    },
+    {
+      "id": "refrescos",
+      "navLabel": "Refrescos",
+      "title": "Refrescos",
+      "items": [
+        { "type": "card", "name": "Coca-Cola", "volume": "0,237 l", "price": "2,80 €" },
+        { "type": "card", "name": "Coca-Cola Zero", "volume": "0,237 l", "price": "2,80 €" },
+        { "type": "card", "name": "Capri Sonne", "volume": "0,2 l", "price": "2,00 €" },
+        { "type": "card", "name": "Ayran", "volume": "0,25 l", "price": "2,00 €" },
+        { "type": "card", "name": "Agua", "volume": "0,5 l", "price": "1,50 €" },
+        { "type": "groupTitle", "text": "Aquarius" },
+        { "type": "card", "name": "Aquarius Naranja", "volume": "0,33 l", "price": "3,50 €" },
+        { "type": "groupTitle", "text": "Fuze Tea" },
+        { "type": "card", "name": "Fuze Tea Limón", "volume": "0,33 l", "price": "3,50 €" },
+        { "type": "fritzBanner", "label": "REFRESCOS FRITZ · 0,33 L", "tagline": "La limonada de culto de Alemania." },
+        { "type": "card", "name": "fritz-kola", "price": "3,50 €" },
+        { "type": "card", "name": "fritz-kola zero", "price": "3,50 €" },
+        { "type": "card", "name": "fritz-limo lemon", "price": "3,50 €" },
+        { "type": "card", "name": "fritz-limo naranja", "price": "3,50 €" },
+        { "type": "card", "name": "fritz-spritz manzana", "subdesc": "BIO", "price": "3,50 €" },
+        { "type": "card", "name": "fritz-spritz ruibarbo", "subdesc": "BIO", "price": "3,50 €" }
+      ]
+    }
+  ]
+}

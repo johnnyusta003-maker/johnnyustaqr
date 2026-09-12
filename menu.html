@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Menú digital de Johnny Usta Berlin Kebab – The Real One" />
+  <title>Johnny Usta · Berlin Kebab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFD801;
+      --text: #111111;
+      --accent: #FFD801;
+      --accent-dark: #e6c200;
+      --card: #ffffff;
+      --muted: #777777;
+      --border: #ebebeb;
+      --shadow: 0 2px 12px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 24px rgba(0,0,0,0.13);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 100px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────── */
+    .site-header {
+      background: var(--text);
+      color: #fff;
+      text-align: center;
+      padding: 36px 20px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    .header-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .header-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(32px, 9vw, 52px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-title span {
+      color: var(--accent);
+    }
+
+    .header-sub {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(16px, 4vw, 22px);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+    }
+
+    .header-subtitle {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 10px;
+    }
+
+    .header-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-top: 16px;
+      letter-spacing: 0.03em;
+    }
+
+    .header-notice::before {
+      content: '●';
+      font-size: 7px;
+      color: var(--accent);
+    }
+
+    /* ─── STICKY NAV ──────────────────────────────── */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .nav-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 4px;
+      padding: 10px 12px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-scroll::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: 1.5px solid transparent;
+      color: var(--muted);
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      color: var(--text);
+      background: rgba(255,196,0,0.1);
+    }
+
+    .nav-btn.active {
+      background: var(--accent);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    /* ─── MAIN CONTENT ────────────────────────────── */
+    .main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ─── SECTION ─────────────────────────────────── */
+    .menu-section {
+      padding-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1.5px;
+      background: var(--border);
+    }
+
+    /* ─── CARDS ───────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 10px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: transparent;
+      transition: background 0.2s;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .card:hover::before { background: var(--accent); }
+    .card:active { transform: scale(0.985); }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .card-name {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .card-price {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--text);
+      white-space: nowrap;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .card-price-single {
+      font-size: 18px;
+    }
+
+    .card-sizes {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .size-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .size-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      background: var(--bg);
+      padding: 2px 7px;
+      border-radius: 100px;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .size-price {
+      font-size: 14px;
+      font-weight: 800;
+      min-width: 54px;
+      text-align: right;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+    }
+
+    .tag-topseller {
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    .tag-picante {
+      background: #ffe0d0;
+      color: #c0390d;
+    }
+
+    .tag-veggie {
+      background: #d8f5e2;
+      color: #1a7a3e;
+    }
+
+    .tag-kids {
+      background: #e0edff;
+      color: #1a4fa0;
+    }
+
+    .tag-gym {
+      background: #e8e0ff;
+      color: #4a1aa0;
+    }
+
+    .tag-alemana {
+      background: #fff0cc;
+      color: #7a5000;
+    }
+
+    .tag-sinalcohol {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .tag-vegano {
+      background: #b6f0d3;
+      color: #0e6633;
+    }
+
+    /* ─── EXTRAS / SALSAS SIMPLE ──────────────────── */
+    .simple-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 8px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .simple-card:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+
+    .simple-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .simple-price {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+
+    /* ─── SECTION IMAGE BANNER ───────────────────────── */
+    .section-img-banner {
+      position: relative;
+      width: calc(100% + 32px);
+      margin: -8px -16px 20px;
+      height: 160px;
+      overflow: hidden;
+      background: #222;
+    }
+    .section-img-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .section-img-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: #fff;
+      z-index: 2;
+    }
+    .section-img-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: #fff;
+      z-index: 2;
+    }
+
+    /* Fritz Banner */
+    .fritz-banner {
+      background: #111;
+      border-radius: 10px;
+      padding: 14px 16px 10px;
+      margin: 20px 0 6px;
+    }
+    .fritz-banner-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .fritz-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .fritz-tagline {
+      font-size: 0.78rem;
+      color: #aaa;
+      font-style: italic;
+    }
+
+    /* Drink group label */
+    .drink-group-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin: 20px 0 6px 2px;
+    }
+
+    /* Salsas grid */
+    .salsas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 8px;
+    }
+
+    .salsa-chip {
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      letter-spacing: 0.02em;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .salsa-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+
+    .salsa-chip.highlight {
+      background: var(--accent);
+      font-weight: 800;
+    }
+
+    /* Bebidas */
+    .bebidas-group-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 18px 0 10px;
+    }
+
+    /* Entrantes with sizes */
+    .entrante-sizes {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    /* ─── FIXED BOTTOM BUTTON ─────────────────────── */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      padding: 12px 16px 20px;
+      background: linear-gradient(to top, var(--bg) 70%, transparent);
+      z-index: 200;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pedir-btn {
+      background: var(--text);
+      color: #fff;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+      max-width: 360px;
+      width: 100%;
+    }
+
+    .pedir-btn:hover {
+      background: #222;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+    }
+
+    .pedir-btn:active { transform: scale(0.97); }
+
+    /* ─── MODAL ───────────────────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      z-index: 500;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--card);
+      border-radius: 24px 24px 0 0;
+      padding: 32px 28px 40px;
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      transform: translateY(30px);
+      transition: transform 0.3s cubic-bezier(.34,1.3,.7,1);
+    }
+
+    .modal-overlay.open .modal { transform: translateY(0); }
+
+    .modal-icon {
+      width: 52px; height: 52px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin: 0 auto 18px;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .modal-text {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-close {
+      background: var(--bg);
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      padding: 14px 40px;
+      border-radius: 100px;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+
+    .modal-close:hover { background: var(--border); }
+
+    /* ─── MENU HINT ───────────────────────────────── */
+    .menu-hint {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--text);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    .menu-hint-left {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .menu-hint-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .menu-hint-desc {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.02em;
+    }
+
+    .menu-hint-days {
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .menu-hint-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ─── IMAGE STRIP ─────────────────────────────── */
+    .img-strip-wrap {
+      background: #000;
+      overflow: hidden;
+      padding: 12px 0;
+    }
+
+    .img-strip {
+      display: flex;
+      gap: 8px;
+      padding: 0 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .img-strip::-webkit-scrollbar { display: none; }
+
+    .img-tile {
+      flex-shrink: 0;
+      width: 110px;
+      height: 110px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #222;
+    }
+
+    .img-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .img-tile img:hover { transform: scale(1.06); }
+
+    /* Placeholder wenn Bild fehlt */
+    .img-tile img[src=""] ,
+    .img-tile img:not([src]) {
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      .img-tile { width: 140px; height: 140px; }
+    }
+
+    /* ─── SCROLL ANIMATION ────────────────────────── */
+    .card, .simple-card, .salsa-chip {
+      animation: fadeUp 0.4s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stagger via JS – fallback */
+    .menu-section .card:nth-child(1) { animation-delay: 0.05s; }
+    .menu-section .card:nth-child(2) { animation-delay: 0.10s; }
+    .menu-section .card:nth-child(3) { animation-delay: 0.15s; }
+    .menu-section .card:nth-child(4) { animation-delay: 0.20s; }
+    .menu-section .card:nth-child(5) { animation-delay: 0.25s; }
+    .menu-section .card:nth-child(6) { animation-delay: 0.30s; }
+    .menu-section .card:nth-child(7) { animation-delay: 0.35s; }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (min-width: 600px) {
+      .main { padding: 0 24px; }
+      .card { padding: 22px 24px; }
+      .card-name { font-size: 15px; }
+      .section-title { font-size: 26px; }
+    }
+
+    @media (min-width: 900px) {
+      .site-header { padding: 48px 20px 36px; }
+      .main { padding: 0 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────── -->
+  <header class="site-header">
+    <img src="logo.png" alt="Johnny Usta Berlin Kebab" style="max-width:160px; width:60%; margin-bottom:18px; display:block; margin-left:auto; margin-right:auto;" />
+    <div class="header-badge">Menú digital</div>
+    <h1 class="header-title">
+      Johnny <span>Usta</span>
+    </h1>
+    <div class="header-sub">Berlin Kebab</div>
+    <div style="font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:6px;">The Real One</div>
+  </header>
+
+  <!-- ─── STICKY NAV ───────────────────────────────── -->
+  <nav class="nav-wrap" id="mainNav">
+    <div class="nav-scroll" id="navScroll"></div>
+  </nav>
+
+  <!-- ─── IMAGE STRIP ──────────────────────────────── -->
+  <div class="img-strip-wrap">
+    <div class="img-strip" id="imgStrip">
+      <div class="img-tile"><img src="img1.jpg" alt="Kebab 1" /></div>
+      <div class="img-tile"><img src="img2.jpg" alt="Kebab 2" /></div>
+      <div class="img-tile"><img src="img3.jpg" alt="Kebab 3" /></div>
+      <div class="img-tile"><img src="img4.jpg" alt="Kebab 4" /></div>
+      <div class="img-tile"><img src="img5.jpg" alt="Kebab 5" /></div>
+      <div class="img-tile"><img src="img6.jpg" alt="Kebab 6" /></div>
+    </div>
+  </div>
+
+
+  <!-- ─── MAIN ─────────────────────────────────────── -->
+  <main class="main" id="menuMain"></main>
+
+  <!-- ─── BOTTOM BAR ────────────────────────────────── -->
+  <div class="bottom-bar">
+    <button class="pedir-btn" id="pedirBtn">Pedir en caja</button>
+  </div>
+
+  <!-- ─── MODAL ─────────────────────────────────────── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-icon">🏪</div>
+      <div class="modal-title" id="modalTitle">Pedir en caja</div>
+      <div class="modal-text">
+        Haz tu pedido directamente en caja.<br>
+        <strong>¡Gracias por tu visita!</strong>
+      </div>
+      <button class="modal-close" id="modalClose">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="menu-app.js"></script>
+</body>
+</html>
