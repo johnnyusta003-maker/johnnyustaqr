@@ -188,6 +188,13 @@
       text-transform: uppercase;
     }
 
+    .section-title-entrantes {
+      white-space: nowrap;
+      font-size: clamp(16px, 4.5vw, 24px);
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+
     .section-line {
       flex: 1;
       height: 1.5px;
@@ -335,6 +342,11 @@
       color: #7a5000;
     }
 
+    .tag-grande {
+      background: #fff8e0;
+      color: #5a4000;
+    }
+
     .tag-sinalcohol {
       background: #e8f5e9;
       color: #2e7d32;
@@ -452,6 +464,7 @@
     }
 
     .salsa-chip {
+      position: relative;
       background: var(--card);
       border-radius: var(--radius-sm);
       padding: 12px 14px;
@@ -468,6 +481,25 @@
     .salsa-chip.highlight {
       background: var(--accent);
       font-weight: 800;
+    }
+
+    .salsa-chip-vegan {
+      padding-top: 18px;
+    }
+
+    .salsa-vegan-btn {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      background: #b6f0d3;
+      color: #0e6633;
+      font-size: 6px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 2px 4px;
+      border-radius: 100px;
+      line-height: 1;
     }
 
     /* Bebidas */
@@ -652,6 +684,45 @@
       flex-shrink: 0;
     }
 
+    /* Dürüm Single / Menú */
+    .durum-price-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+    .durum-price-line {
+      font-size: 16px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .durum-price-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 4px;
+    }
+    .durum-menu-btn {
+      background: var(--text);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .durum-menu-btn .durum-price-label {
+      color: rgba(255,255,255,0.65);
+    }
+    .durum-menu-btn .durum-price-val {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
     /* ─── IMAGE STRIP ─────────────────────────────── */
     .img-strip-wrap {
       background: #000;
@@ -724,6 +795,7 @@
       .card { padding: 22px 24px; }
       .card-name { font-size: 15px; }
       .section-title { font-size: 26px; }
+      .section-title-entrantes { font-size: 26px; letter-spacing: 0.06em; }
     }
 
     @media (min-width: 900px) {
@@ -781,30 +853,11 @@
     <!-- ENTRANTES -->
     <section class="menu-section" id="entrantes">
       <div class="section-header">
-        <h2 class="section-title">Entrantes / Para Compartir</h2>
+        <h2 class="section-title section-title-entrantes">Entrantes / Para Compartir</h2>
         <div class="section-line"></div>
       </div>
       <div class="section-img-banner">
         <img src="entrantes.jpg" alt="Entrantes" onerror="this.style.display='none'" />
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-name">Nachos Gratinados</div>
-          <div class="card-price card-price-single">10,90 €</div>
-        </div>
-        <div class="card-desc">Con queso, carne picada, guacamole y sour cream</div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-name">Nachos Gratinados Spicy</div>
-          <div class="card-price card-price-single">11,50 €</div>
-        </div>
-        <div class="card-desc">Con queso, carne picada, guacamole, sour cream y jalapeños</div>
-        <div class="card-tags">
-          <span class="tag tag-picante">🌶 Picante</span>
-        </div>
       </div>
 
       <div class="card">
@@ -830,7 +883,7 @@
             </div>
           </div>
         </div>
-        <div class="card-desc">Con mayonesa de trufa y parmesano</div>
+        <div class="card-desc">Patatas fritas con mayonesa de trufa y parmesano</div>
       </div>
 
       <div class="card">
@@ -856,7 +909,7 @@
             </div>
           </div>
         </div>
-        <div class="card-desc">Patatas fritas con queso y jalapeños</div>
+        <div class="card-desc">Patatas fritas gratinado con cheddar y mozzarella con jalapeños y salsa picante</div>
       </div>
 
 
@@ -865,8 +918,8 @@
           <div class="card-name">Falafel con Salsa Tahini Hummus</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">4 uds</span><span class="size-price">5,90 €</span></div>
-              <div class="size-row"><span class="size-label">8 uds</span><span class="size-price">9,90 €</span></div>
+              <div class="size-row"><span class="size-label">6 uds</span><span class="size-price">5,90 €</span></div>
+              <div class="size-row"><span class="size-label">10 uds</span><span class="size-price">8,90 €</span></div>
             </div>
           </div>
         </div>
@@ -889,7 +942,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Kids Box</div>
-          <div class="card-price card-price-single">7,00 €</div>
+          <div class="card-price card-price-single">6,50 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas y una salsa</div>
         <div class="card-tags">
@@ -910,8 +963,8 @@
 
       <div class="card">
         <div class="card-top">
-          <div class="card-name">Dürüm Pequeño + Patatas</div>
-          <div class="card-price card-price-single">7,00 €</div>
+          <div class="card-name">Dürüm Pequeño + Patatas y Capri Sun</div>
+          <div class="card-price card-price-single">8,00 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla y una salsa</div>
         <div class="card-tags">
@@ -934,7 +987,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">90's Classic Box</div>
-          <div class="card-price card-price-single">8,00 €</div>
+          <div class="card-price card-price-single">7,90 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, salsa hierbas y salsa ajo</div>
       </div>
@@ -950,7 +1003,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Box con todo</div>
-          <div class="card-price card-price-single">9,00 €</div>
+          <div class="card-price card-price-single">9,50 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, lechuga, tomate, cebolla, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
         <div class="card-tags">
@@ -961,7 +1014,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Con todo picante</div>
-          <div class="card-price card-price-single">9,50 €</div>
+          <div class="card-price card-price-single">9,90 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, lechuga, tomate, cebolla, col, jalapeños, salsa ajo, salsa hierbas, salsa roja, salsa picante y salsa Johnny Special</div>
         <div class="card-tags">
@@ -972,7 +1025,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Berlin Box</div>
-          <div class="card-price card-price-single">10,50 €</div>
+          <div class="card-price card-price-single">10,90 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
         <div class="card-tags">
@@ -999,7 +1052,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Fit Box</div>
-          <div class="card-price card-price-single">8,50 €</div>
+          <div class="card-price card-price-single">8,90 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla, col, pepino, dressing de granada, aceite de oliva, vinagre y salsa hierbas</div>
         <div class="card-tags">
@@ -1021,13 +1074,21 @@
 
       <div class="card">
         <div class="card-top">
+          <div class="card-name">Dürüm Pequeño</div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">5,50 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">9,90 €</span></div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla y una salsa</div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
           <div class="card-name">90's Classic</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">5,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">7,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">9,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">7,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">11,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, salsa ajo y salsa hierbas</div>
@@ -1036,12 +1097,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Johnny's Original</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,50 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">8,50 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">12,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
@@ -1053,12 +1111,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">The Boss</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">8,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, verduras asadas, salsa ajo, salsa hierbas y salsa roja</div>
@@ -1067,12 +1122,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Picante</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">8,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,40 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, jalapeños, salsa ajo, salsa hierbas, salsa picante y salsa Johnny Special</div>
@@ -1084,12 +1136,23 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Berlin</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">9,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">14,90 €</span></div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Berlin XL</div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">11,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">16,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
@@ -1101,12 +1164,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Solo Carne</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">9,50 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
@@ -1120,16 +1180,16 @@
         <h2 class="section-title">Döner</h2>
         <div class="section-line"></div>
       </div>
+      <div class="section-img-banner">
+        <img src="doener.jpg" alt="Döner" onerror="this.style.display='none'" />
+      </div>
 
       <div class="card">
         <div class="card-top">
           <div class="card-name">90's Classic</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">5,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">7,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">9,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">7,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">11,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, salsa ajo y salsa hierbas</div>
@@ -1138,12 +1198,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Johnny's Original</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,50 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">8,50 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">12,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
@@ -1155,12 +1212,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">The Boss</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">8,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, verduras asadas, salsa ajo, salsa hierbas y salsa roja</div>
@@ -1169,12 +1223,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Picante</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">8,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,40 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, jalapeños, salsa ajo, salsa hierbas, salsa picante y salsa Johnny Special</div>
@@ -1186,12 +1237,23 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Berlin</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,90 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,90 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,90 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">9,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">14,90 €</span></div>
+          </div>
+        </div>
+        <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
+        <div class="card-tags">
+          <span class="tag tag-topseller">⭐ Top Seller</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">Berlin XL</div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">11,90 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">16,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
@@ -1203,12 +1265,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Solo Carne</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">9,50 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
@@ -1229,12 +1288,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Zidane</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">9,00 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, mozzarella, cheddar y salsa Johnny Special</div>
@@ -1243,12 +1299,9 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Crispy Chicken</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
-            </div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">9,00 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">13,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Crispy chicken, lechuga, patatas, mozzarella, cheddar, mayonesa y salsa Johnny Special</div>
@@ -1269,13 +1322,10 @@
 
       <div class="card">
         <div class="card-top">
-          <div class="card-name">Vegetal Dürüm</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">4,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">6,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">8,50 €</span></div>
-            </div>
+          <div class="card-name">Vegetal Dürüm o Döner</div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">6,00 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">9,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Lechuga, cebolla, tomate, pepino, col y salsas</div>
@@ -1288,13 +1338,10 @@
 
       <div class="card">
         <div class="card-top">
-          <div class="card-name">Falafel Dürüm</div>
-          <div class="card-price">
-            <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,50 €</span></div>
-              <div class="size-row"><span class="size-label">L</span><span class="size-price">8,50 €</span></div>
-              <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,50 €</span></div>
-            </div>
+          <div class="card-name">Falafel Dürüm o Döner</div>
+          <div class="card-price durum-price-col">
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">8,50 €</span></div>
+            <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">12,90 €</span></div>
           </div>
         </div>
         <div class="card-desc">Falafel casero crujiente, lechuga, cebolla, tomate, pepino, col y salsas</div>
@@ -1342,10 +1389,11 @@
         <div class="salsa-chip">Johnny Special</div>
         <div class="salsa-chip">Ajo</div>
         <div class="salsa-chip">Hierbas</div>
-        <div class="salsa-chip">Salsa Roja</div>
-        <div class="salsa-chip">Picante</div>
-        <div class="salsa-chip">Tahini Hummus</div>
-        <div class="salsa-chip">Ketchup</div>
+        <div class="salsa-chip salsa-chip-vegan">Salsa Roja<span class="salsa-vegan-btn">Vegano</span></div>
+        <div class="salsa-chip salsa-chip-vegan">Picante<span class="salsa-vegan-btn">Vegano</span></div>
+        <div class="salsa-chip salsa-chip-vegan">Tahini Hummus<span class="salsa-vegan-btn">Vegano</span></div>
+        <div class="salsa-chip salsa-chip-vegan">Granada<span class="salsa-vegan-btn">Vegano</span></div>
+        <div class="salsa-chip salsa-chip-vegan">Ketchup<span class="salsa-vegan-btn">Vegano</span></div>
         <div class="salsa-chip">Mayonesa</div>
         <div class="salsa-chip">BBQ</div>
       </div>
@@ -1356,6 +1404,58 @@
       <div class="section-header">
         <h2 class="section-title">Cervezas</h2>
         <div class="section-line"></div>
+      </div>
+
+      <div class="bebidas-group-title">Estrella Galicia</div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Estrella Galicia</div>
+            <div class="card-desc" style="margin-top:3px;">Lata · 0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Estrella Galicia 0,0</div>
+            <div class="card-desc" style="margin-top:3px;">Lata · 0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-sinalcohol">Sin alcohol</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Estrella Galicia</div>
+            <div class="card-desc" style="margin-top:3px;">Barril · Doble</div>
+          </div>
+          <div class="card-price card-price-single">2,70 €</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-grande">🍺 Del barril</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Estrella Galicia</div>
+            <div class="card-desc" style="margin-top:3px; font-weight:700;">Barril · Jarra · Grande</div>
+          </div>
+          <div class="card-price card-price-single">4,50 €</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-grande">🍺 Del barril</span>
+          <span class="tag tag-grande">Grande</span>
+        </div>
       </div>
 
       <div class="bebidas-group-title">Cerveza Alemana</div>
@@ -1379,12 +1479,14 @@
             <div class="card-name">Dinkelacker</div>
             <div class="card-desc" style="margin-top:3px;">0,33 l</div>
           </div>
-          <div class="card-price card-price-single">3,80 €</div>
+          <div class="card-price card-price-single">3,50 €</div>
         </div>
         <div class="card-tags">
           <span class="tag tag-alemana">🇩🇪 Alemana</span>
         </div>
       </div>
+
+      <div class="bebidas-group-title">Internacional</div>
 
       <div class="card">
         <div class="card-top">
@@ -1392,52 +1494,17 @@
             <div class="card-name">Corona</div>
             <div class="card-desc" style="margin-top:3px;">0,33 l</div>
           </div>
-          <div class="card-price card-price-single">3,80 €</div>
-        </div>
-      </div>
-
-      <div class="bebidas-group-title">Turia</div>
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <div class="card-name">Turia Tostada</div>
-            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
-          </div>
-          <div class="card-price card-price-single">3,00 €</div>
+          <div class="card-price card-price-single">3,20 €</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
           <div>
-            <div class="card-name">Turia 0,0 Tostada</div>
+            <div class="card-name">Desperados</div>
             <div class="card-desc" style="margin-top:3px;">0,33 l</div>
           </div>
-          <div class="card-price card-price-single">3,00 €</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag tag-sinalcohol">Sin alcohol</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <div class="card-name">Turia Rubia</div>
-            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
-          </div>
-          <div class="card-price card-price-single">3,00 €</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <div class="card-name">Damm Lemon Radler</div>
-            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
-          </div>
-          <div class="card-price card-price-single">3,00 €</div>
+          <div class="card-price card-price-single">3,20 €</div>
         </div>
       </div>
 
@@ -1466,29 +1533,47 @@
       <div class="card">
         <div class="card-top">
           <div>
-            <div class="card-name">Coca-Cola</div>
-            <div class="card-desc" style="margin-top:3px;">0,237 l</div>
+            <div class="card-name">Agua</div>
+            <div class="card-desc" style="margin-top:3px;">0,5 l</div>
           </div>
-          <div class="card-price card-price-single">2,80 €</div>
+          <div class="card-price card-price-single">1,50 €</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
           <div>
-            <div class="card-name">Coca-Cola Zero</div>
-            <div class="card-desc" style="margin-top:3px;">0,237 l</div>
+            <div class="card-name">Agua con gas</div>
+            <div class="card-desc" style="margin-top:3px;">0,5 l</div>
           </div>
-          <div class="card-price card-price-single">2,80 €</div>
+          <div class="card-price card-price-single">2,00 €</div>
         </div>
       </div>
-
 
       <div class="card">
         <div class="card-top">
           <div>
-            <div class="card-name">Capri Sonne</div>
-            <div class="card-desc" style="margin-top:3px;">0,2 l</div>
+            <div class="card-name">Refrescos</div>
+            <div class="card-desc" style="margin-top:3px;">Botella · 0,5 l</div>
+          </div>
+          <div class="card-price card-price-single">2,50 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Refrescos</div>
+            <div class="card-desc" style="margin-top:3px;">Lata · 0,33 l</div>
+          </div>
+          <div class="card-price card-price-single">2,00 €</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">Capri Sun</div>
           </div>
           <div class="card-price card-price-single">2,00 €</div>
         </div>
@@ -1498,45 +1583,8 @@
         <div class="card-top">
           <div>
             <div class="card-name">Ayran</div>
-            <div class="card-desc" style="margin-top:3px;">0,25 l</div>
           </div>
           <div class="card-price card-price-single">2,00 €</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <div class="card-name">Agua</div>
-            <div class="card-desc" style="margin-top:3px;">0,5 l</div>
-          </div>
-          <div class="card-price card-price-single">1,50 €</div>
-        </div>
-      </div>
-
-      <div class="bebidas-group-title">Aquarius</div>
-
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <div class="card-name">Aquarius Naranja</div>
-            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
-          </div>
-          <div class="card-price card-price-single">3,50 €</div>
-        </div>
-      </div>
-
-
-      <div class="bebidas-group-title">Fuze Tea</div>
-
-      <div class="card">
-        <div class="card-top">
-          <div>
-            <div class="card-name">Fuze Tea Limón</div>
-            <div class="card-desc" style="margin-top:3px;">0,33 l</div>
-          </div>
-          <div class="card-price card-price-single">3,50 €</div>
         </div>
       </div>
 
@@ -1550,28 +1598,28 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">fritz-kola</div>
-          <div class="card-price card-price-single">3,50 €</div>
+          <div class="card-price card-price-single">2,90 €</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
           <div class="card-name">fritz-kola zero</div>
-          <div class="card-price card-price-single">3,50 €</div>
+          <div class="card-price card-price-single">2,90 €</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
           <div class="card-name">fritz-limo lemon</div>
-          <div class="card-price card-price-single">3,50 €</div>
+          <div class="card-price card-price-single">2,90 €</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top">
           <div class="card-name">fritz-limo naranja</div>
-          <div class="card-price card-price-single">3,50 €</div>
+          <div class="card-price card-price-single">2,90 €</div>
         </div>
       </div>
 
@@ -1581,7 +1629,7 @@
             <div class="card-name">fritz-spritz manzana</div>
             <div class="card-desc" style="margin-top:3px;">BIO</div>
           </div>
-          <div class="card-price card-price-single">3,50 €</div>
+          <div class="card-price card-price-single">2,90 €</div>
         </div>
       </div>
 
@@ -1591,7 +1639,7 @@
             <div class="card-name">fritz-spritz ruibarbo</div>
             <div class="card-desc" style="margin-top:3px;">BIO</div>
           </div>
-          <div class="card-price card-price-single">3,50 €</div>
+          <div class="card-price card-price-single">2,90 €</div>
         </div>
       </div>
 
