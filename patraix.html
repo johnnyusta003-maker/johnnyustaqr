@@ -210,6 +210,63 @@
       padding: 0 16px;
     }
 
+    /* ─── OFERTA MEDIODÍA ─────────────────────────── */
+    .oferta-block {
+      background: #111;
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 20px 16px 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .oferta-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .oferta-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(20px, 5.5vw, 26px);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .oferta-time {
+      flex-shrink: 0;
+      background: var(--accent);
+      color: #111;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 11px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .oferta-block .card {
+      background: #1c1c1c;
+      box-shadow: none;
+    }
+
+    .oferta-block .card-name {
+      color: #fff;
+    }
+
+    .oferta-block .card-desc {
+      color: rgba(255,255,255,0.55);
+    }
+
+    .oferta-block .card-price-single {
+      color: var(--accent);
+    }
+
     /* ─── SECTION ─────────────────────────────────── */
     .menu-section {
       padding-top: 40px;
@@ -872,7 +929,8 @@
   <!-- ─── STICKY NAV ───────────────────────────────── -->
   <nav class="nav-wrap" id="mainNav">
     <div class="nav-scroll" id="navScroll">
-      <button class="nav-btn active" data-target="entrantes">Entrantes</button>
+      <button class="nav-btn active" data-target="oferta">Oferta</button>
+      <button class="nav-btn" data-target="entrantes">Entrantes</button>
       <button class="nav-btn" data-target="kids">Kids</button>
       <button class="nav-btn" data-target="boxes">Box / Bowl</button>
       <button class="nav-btn" data-target="durum">Dürüm</button>
@@ -901,6 +959,36 @@
 
   <!-- ─── MAIN ─────────────────────────────────────── -->
   <main class="main">
+
+    <!-- OFERTA MEDIODÍA -->
+    <section class="menu-section" id="oferta">
+      <div class="oferta-block">
+        <div class="oferta-head">
+          <h2 class="oferta-title">Oferta Mediodía</h2>
+          <span class="oferta-time">13–16 h</span>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div>
+              <div class="card-name">Box con todo</div>
+              <div class="card-desc" style="margin-top:3px;">Con arroz o patatas + refresco</div>
+            </div>
+            <div class="card-price card-price-single">8,90 €</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div>
+              <div class="card-name">Dürüm Pequeño</div>
+              <div class="card-desc" style="margin-top:3px;">+ patatas + refresco</div>
+            </div>
+            <div class="card-price card-price-single">8,90 €</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ENTRANTES -->
     <section class="menu-section" id="entrantes">
@@ -1217,7 +1305,7 @@
         <div class="card-top">
           <div class="card-name">Dürüm Pequeño</div>
           <div class="card-price durum-price-col">
-            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">5,50 €</span></div>
+            <div class="durum-price-line"><span class="durum-price-label">Single</span><span class="durum-price-val">5,00 €</span></div>
             <div class="durum-menu-btn"><span class="durum-price-label">Menú</span><span class="durum-price-val">9,90 €</span></div>
           </div>
         </div>
@@ -1447,6 +1535,7 @@
         <div class="salsa-chip salsa-chip-vegan">Granada<span class="salsa-vegan-btn">Vegano</span></div>
         <div class="salsa-chip salsa-chip-vegan">Ketchup<span class="salsa-vegan-btn">Vegano</span></div>
         <div class="salsa-chip">Mayonesa</div>
+        <div class="salsa-chip">Mayonesa de Trufa</div>
         <div class="salsa-chip">BBQ</div>
       </div>
     </section>
@@ -1489,7 +1578,7 @@
             <div class="card-name">Estrella Galicia</div>
             <div class="card-desc" style="margin-top:3px;">Barril · Doble</div>
           </div>
-          <div class="card-price card-price-single">2,70 €</div>
+          <div class="card-price card-price-single">3,00 €</div>
         </div>
         <div class="card-tags">
           <span class="tag tag-grande">🍺 Del barril</span>
@@ -1518,7 +1607,7 @@
             <div class="card-name">Augustiner</div>
             <div class="card-desc" style="margin-top:3px;">0,5 l</div>
           </div>
-          <div class="card-price card-price-single">4,90 €</div>
+          <div class="card-price card-price-single">4,50 €</div>
         </div>
         <div class="card-tags">
           <span class="tag tag-alemana">🇩🇪 Alemana</span>
@@ -1531,7 +1620,7 @@
             <div class="card-name">Dinkelacker</div>
             <div class="card-desc" style="margin-top:3px;">0,33 l</div>
           </div>
-          <div class="card-price card-price-single">3,50 €</div>
+          <div class="card-price card-price-single">3,20 €</div>
         </div>
         <div class="card-tags">
           <span class="tag tag-alemana">🇩🇪 Alemana</span>
