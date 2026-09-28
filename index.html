@@ -730,6 +730,86 @@
       .site-header { padding: 48px 20px 36px; }
       .main { padding: 0 32px; }
     }
+
+    .print-menu-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 18px;
+      border: 2px solid var(--accent);
+      border-radius: 100px;
+      background: transparent;
+      color: var(--accent);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .print-menu-btn:hover {
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    @media print {
+      html, body {
+        background: #fff !important;
+        padding-bottom: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .nav-wrap,
+      .bottom-bar,
+      .modal-overlay,
+      .img-strip-wrap,
+      .print-menu-btn {
+        display: none !important;
+      }
+
+      .site-header {
+        padding: 24px 16px 20px;
+        break-after: avoid;
+      }
+
+      .main {
+        padding: 0 12px !important;
+      }
+
+      .menu-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 16px;
+      }
+
+      .card,
+      .simple-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #e5e5e5;
+      }
+
+      .card:hover,
+      .simple-card:hover {
+        transform: none;
+      }
+
+      .section-img-banner {
+        height: 120px;
+        margin-bottom: 12px;
+      }
+
+      .card, .simple-card, .salsa-chip {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -742,7 +822,8 @@
       Johnny <span>Usta</span>
     </h1>
     <div class="header-sub">Berlin Kebab</div>
-    <div style="font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:6px;">The Real One</div>
+    <div style="font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:6px;">The Real One · Torrente</div>
+    <button type="button" class="print-menu-btn" id="printMenuBtn" aria-label="Imprimir menú o guardar PDF">📄 Guardar PDF / Imprimir</button>
   </header>
 
   <!-- ─── STICKY NAV ───────────────────────────────── -->
@@ -957,7 +1038,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Johnny's Original Box</div>
-          <div class="card-price card-price-single">9,90 €</div>
+          <div class="card-price card-price-single">11,50 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, lechuga, tomate, cebolla, col, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
         <div class="card-tags">
@@ -968,7 +1049,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Hot Box</div>
-          <div class="card-price card-price-single">10,50 €</div>
+          <div class="card-price card-price-single">11,50 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, lechuga, tomate, cebolla, col, jalapeños, salsa ajo, salsa hierbas, salsa roja, salsa picante y salsa Johnny Special</div>
         <div class="card-tags">
@@ -979,7 +1060,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Berlin Box</div>
-          <div class="card-price card-price-single">10,90 €</div>
+          <div class="card-price card-price-single">12,50 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, lechuga, cebolla, tomate, pepino, col, verduras asadas, queso de oveja, salsa ajo, salsa hierbas, salsa roja y salsa Johnny Special</div>
         <div class="card-tags">
@@ -990,7 +1071,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Zidane Box</div>
-          <div class="card-price card-price-single">9,90 €</div>
+          <div class="card-price card-price-single">10,90 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, patatas fritas, mozzarella, cheddar y salsa Johnny Special</div>
       </div>
@@ -998,7 +1079,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Crispy Chicken Box</div>
-          <div class="card-price card-price-single">9,90 €</div>
+          <div class="card-price card-price-single">10,90 €</div>
         </div>
         <div class="card-desc">Crispy chicken, patatas fritas, mozzarella, cheddar, mayonesa y salsa Johnny Special</div>
       </div>
@@ -1006,7 +1087,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Fit Box</div>
-          <div class="card-price card-price-single">9,00 €</div>
+          <div class="card-price card-price-single">9,90 €</div>
         </div>
         <div class="card-desc">Pollo a la parrilla, lechuga, tomate, cebolla, col, pepino, dressing de granada, aceite de oliva, vinagre y salsa hierbas</div>
         <div class="card-tags">
@@ -1031,7 +1112,7 @@
           <div class="card-name">90's Classic</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">5,90 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">7,90 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">9,90 €</span></div>
             </div>
@@ -1045,7 +1126,7 @@
           <div class="card-name">Johnny's Original</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,50 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">8,50 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,50 €</span></div>
             </div>
@@ -1062,7 +1143,7 @@
           <div class="card-name">The Boss</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,90 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">8,90 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,90 €</span></div>
             </div>
@@ -1076,7 +1157,7 @@
           <div class="card-name">Picante</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,90 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,90 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">8,90 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,90 €</span></div>
             </div>
@@ -1093,7 +1174,7 @@
           <div class="card-name">Berlin</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,90 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">8,90 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">9,90 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,90 €</span></div>
             </div>
@@ -1110,7 +1191,7 @@
           <div class="card-name">Solo Carne</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">8,50 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
             </div>
@@ -1136,7 +1217,7 @@
           <div class="card-name">Zidane</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">8,50 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
             </div>
@@ -1150,7 +1231,7 @@
           <div class="card-name">Crispy Chicken</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">8,50 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">9,50 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">11,50 €</span></div>
             </div>
@@ -1177,7 +1258,7 @@
           <div class="card-name">Vegetal Dürüm</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">4,50 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">5,50 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">6,50 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">8,50 €</span></div>
             </div>
@@ -1196,7 +1277,7 @@
           <div class="card-name">Falafel Dürüm</div>
           <div class="card-price">
             <div class="card-sizes">
-              <div class="size-row"><span class="size-label">M</span><span class="size-price">6,50 €</span></div>
+              <div class="size-row"><span class="size-label">M</span><span class="size-price">7,50 €</span></div>
               <div class="size-row"><span class="size-label">L</span><span class="size-price">8,50 €</span></div>
               <div class="size-row"><span class="size-label">XL</span><span class="size-price">10,50 €</span></div>
             </div>
@@ -1212,7 +1293,7 @@
       <div class="card">
         <div class="card-top">
           <div class="card-name">Falafel Box</div>
-          <div class="card-price card-price-single">9,50 €</div>
+          <div class="card-price card-price-single">9,90 €</div>
         </div>
         <div class="card-desc">Falafel, patatas, lechuga, cebolla, tomate, pepino, col y salsas</div>
         <div class="card-tags">
@@ -1564,6 +1645,8 @@
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
+
+    document.getElementById('printMenuBtn').addEventListener('click', () => window.print());
     function closeModal() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
